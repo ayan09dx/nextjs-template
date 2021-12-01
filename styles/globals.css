@@ -1,0 +1,111 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family:Roboto;
+  background-color: #E6F7FF;
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.loginpagecontainer{
+  display: flex;
+  width: 100%;
+  padding: 5%;
+  min-height: 100vh;
+  background: url("../public/loginback.png") center center no-repeat;
+  background-size: cover;
+
+ 
+}
+.logincontainer{
+  display: flex;
+  width: 100%;
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+}
+.loginimgcontainer{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logintextcontainer{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5%;
+  
+}
+.logintextcontainer h2{font-weight: 400!important;}
+
+.loginimg{object-fit: cover;width: 70%;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.icon {
+  padding: 10px;
+  background: #004ABD;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border:1px solid lightgray;
+}
+
+.input-field:focus {
+  border: 2px solid #004ABD;
+  transition: 1s;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #004ABD;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+  font-size: 14px;
+  transition: 1s;
+}
+
+@media screen and (max-width: 1023px) {
+  body{font-size: 14px;}
+  .logincontainer{flex-direction: column;padding: 5%;}
+  .loginimgcontainer{width: 100%;margin-top: 10%;}
+  .logintextcontainer{width: 100%;margin-top: 10%;}
+  .loginimg{width: 60%;max-height: 200px;object-fit: contain;}
+  h2{font-size: 16px;font-weight: 400;}
+  .icon {
+    padding: 10px;
+    min-width: 20px;
+ 
+  }
+}
