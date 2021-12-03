@@ -60,3 +60,12 @@ export function absoluteUrl(req, setLocalhost) {
     Cookies.remove('token');
     Router.push('/');
   }
+
+  export function testJSON(text){
+      try {
+        return (typeof text === 'object');
+      } catch (e) {
+        return false;
+      }
+    
+}

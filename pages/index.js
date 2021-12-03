@@ -1,8 +1,7 @@
 import React, {useState} from "react"
 import { useRouter } from "next/router"
 import {  absoluteUrl,getAppCookies,verifyToken} from '../utils/jwthandler';
-import ErrorSnackbar from '../utils/errorSnackbar'
-import SuccessSnackbar from '../utils/successSnackbar'
+
 export default function Home(props){
   const [load,setLoad]=useState(false)
   const router=useRouter();
@@ -17,7 +16,7 @@ export default function Home(props){
 },[])
   return(
     load?
-    <><ErrorSnackbar /><SuccessSnackbar open={true} msg="Success"/></>
+    <></>
     :<></>
   )
 }
