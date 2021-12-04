@@ -1,6 +1,9 @@
 {
   "name": "ayan-next-templete",
   "private": true,
+  "engines": {
+    "node": "^14.17.6"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "npm i && next build",
