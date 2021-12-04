@@ -7,7 +7,7 @@ import {sha256} from 'js-sha256';
 import jwt from 'jsonwebtoken';
 import ErrorSnackbar from '../utils/errorSnackbar'
 import SuccessSnackbar from '../utils/successSnackbar'
-import Cookies from 'js-cookie';
+import { sendEmail } from '../utils/email';
 import {useRouter} from 'next/router';
 import {  absoluteUrl,getAppCookies,verifyToken} from '../utils/jwthandler';
 
@@ -115,7 +115,10 @@ export default function SignUp(props){
               })
               const json = await res.json()
               if(json.message==='ok'){
+                let subject=username+"- You are successfully signed up with XYZ app";
+                let msg="Welcome onboard!! We are delighted to have you here. Access your account at https://google.com"
                 setSuccessSignup(true);
+                sendEmail({name:username,email:email,msg:msg,subject:subject})
                 router.push('/login');
               }
               else {

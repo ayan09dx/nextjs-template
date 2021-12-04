@@ -16,13 +16,13 @@ export default async function handleCheckEmail(req,res){
   let doc = await db.collection('users').findOne({email:email})
   //console.log(testJSON(doc))
   if(doc!==null && testJSON(doc)){
-    res_data={message:'notok'}
+    res_data={message:'notok',user:doc.username}
   }
   else if(!testJSON(doc)){
-    res_data={message:'database_error'}
+    res_data={message:'database_error',user:''}
   }
   else{
-    res_data={message:'ok'}
+    res_data={message:'ok',user:''}
   }
  
   res.status(200).json(res_data);

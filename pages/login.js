@@ -59,7 +59,7 @@ export default function Login(props){
               const json = await res.json()
               if(json.message==='ok'){
                 Cookies.set('token', json.token);
-                router.push('/home');
+                router.push('/');
               }
               else if(json.message==='notok'){
                setErrorLogin(true)

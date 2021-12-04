@@ -1,8 +1,10 @@
 import '../styles/globals.css'
 import SnackbarProvider from 'react-simple-snackbar'
+import Layout from '../components/Layout'
+
 function MyApp({ Component, pageProps }) {
   return (
-    <SnackbarProvider> <Component {...pageProps} /></SnackbarProvider>
+    <SnackbarProvider><Layout> <Component {...pageProps} /> </Layout></SnackbarProvider>
    
   )
 }

@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 import jwt from 'jsonwebtoken';
 
 const SECRET_KEY = process.env.SECRET_KEY;
+const API_SECRET_KEY = process.env.API_SECRET_KEY;
 
 /*
  * @params {jwtToken} extracted from cookies
@@ -12,6 +13,15 @@ const SECRET_KEY = process.env.SECRET_KEY;
 export function verifyToken(jwtToken) {
   try {
     return jwt.verify(jwtToken, SECRET_KEY);
+  } catch (e) {
+    console.log('e:', e);
+    return null;
+  }
+}
+
+export function verifyAPIToken(jwtToken) {
+  try {
+    return jwt.verify(jwtToken, API_SECRET_KEY);
   } catch (e) {
     console.log('e:', e);
     return null;
