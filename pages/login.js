@@ -113,7 +113,7 @@ export default function Login(props){
 
                 <button type="submit" className="btn" onClick={onSubmit}>Login</button>
                 <div className="forgotnew">
-                    <Link href="#"><a>Forgot Password?</a></Link>
+                    <Link href="/forgotPass"><a>Forgot Password?</a></Link>
                     <Link href="/signup"><a>New User? Create an Account</a></Link>
                 </div>
             </div>

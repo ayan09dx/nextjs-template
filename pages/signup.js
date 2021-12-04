@@ -191,7 +191,7 @@ export default function SignUp(props){
 
                 <button type="submit" className="btn" onClick={onSubmit} disabled={disabled}>Sign Up</button>
                 <div className="forgotnew">
-                    <Link href="#"><a>Forgot Password?</a></Link>
+                    <Link href="/forgotPass"><a>Forgot Password?</a></Link>
                     <Link href="/login"><a>Already Have Account? Sign In</a></Link>
                 </div>
             </div>
