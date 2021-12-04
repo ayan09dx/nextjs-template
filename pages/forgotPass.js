@@ -53,8 +53,9 @@ export default function ForgotPass(props){
             let token=jwt.sign(req_data,API_SECRET_KEY,{expiresIn:'1d'});
             let subject=user+"- Password Change Request for XYZ app";
             let msg="Please reset the password using the link(Valid for 1 Day only): "+props.resetUrl+"?token="+token;
-            sendEmail({name:user,email:email,msg:msg,subject:subject});
             setSuccessReq(true);
+            sendEmail({name:user,email:email,msg:msg,subject:subject});
+            
             }
         else{
             return
