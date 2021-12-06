@@ -14,7 +14,7 @@ export function verifyToken(jwtToken) {
   try {
     return jwt.verify(jwtToken, SECRET_KEY);
   } catch (e) {
-    console.log('e:', e);
+    //console.log('e:', e);
     return null;
   }
 }
@@ -23,7 +23,7 @@ export function verifyAPIToken(jwtToken) {
   try {
     return jwt.verify(jwtToken, API_SECRET_KEY);
   } catch (e) {
-    console.log('e:', e);
+    //console.log('e:', e);
     return null;
   }
 }

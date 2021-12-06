@@ -47,7 +47,7 @@ export default function Login(props){
 
     const  onSubmit=async ()=>{
         setErrorLogin(false);setErrorLoginDatabase(false);
-        if(checkPass()&& checkEmail()){
+        if(checkEmail() && checkPass() ){
             let req_data={email:email,password:sha256(password)}
             let payload={token:jwt.sign(req_data,API_SECRET_KEY,{expiresIn:'300s'})};
            // console.log(jwt.verify(payload.token,API_SECRET_KEY))
@@ -76,12 +76,12 @@ export default function Login(props){
     }
   
     useEffect(()=>{
-        if(props.profile!==''){
+        if(props.profile!=='' && props.profile!==null){
             router.push('/')
-        }
+          }
     },[])
 
-
+//console.log(erroremail)
     return(
         <div className="loginpagecontainer">
         <div className="logincontainer">

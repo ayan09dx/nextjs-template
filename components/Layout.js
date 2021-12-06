@@ -7,7 +7,7 @@ export default function Layout({children}){
 const [load,setLoad]=useState(false);
 
 useEffect(()=>{
-    if(children[1].props.profile===''){
+    if(children[1].props.profile==='' || children[1].props.profile===null ){
         setLoad(false)
     }
     else{

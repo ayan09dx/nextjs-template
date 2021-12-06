@@ -7,11 +7,12 @@ export default function Home(props){
   const router=useRouter();
 
   React.useEffect(()=>{
-    if(props.profile!==''){
-        setLoad(true)
+    if(props.profile==='' || props.profile===null){
+      router.push('/login')
+       
     }
     else{
-      router.push('/login')
+      setLoad(true)
     }
 },[])
   return(

@@ -63,9 +63,9 @@ export default function ForgotPass(props){
     }
   
     useEffect(()=>{
-        if(props.profile!==''){
+        if(props.profile!=='' && props.profile!==null){
             router.push('/')
-        }
+          }
     },[])
 
 
@@ -90,7 +90,7 @@ export default function ForgotPass(props){
 
                 <button type="submit" className="btn" onClick={onSubmit}>Submit Request</button>
                 <div className="forgotnew">
-                    <Link href="#"><a>Sign In</a></Link>
+                    <Link href="/login"><a>Sign In</a></Link>
                     <Link href="/signup"><a>New User? Create an Account</a></Link>
                 </div>
             </div>

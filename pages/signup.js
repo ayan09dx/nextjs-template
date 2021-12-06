@@ -70,6 +70,7 @@ export default function SignUp(props){
 }
 
     const checkPass=()=>{
+        
         if(password===""){
             setErrorPassword('Please enter your password');
             return false
@@ -104,7 +105,7 @@ export default function SignUp(props){
 
     const  onSubmit=async ()=>{
         setErrorSignup(false);setSuccessSignup(false)
-        if(checkEmail() && checkUserName() && checkPass() && checkConfirmPass()){
+        if(checkUserName() && checkEmail() && checkPass() && checkConfirmPass()){
             let req_data={username:username,email:email,password:sha256(password)}
             let payload={token:jwt.sign(req_data,API_SECRET_KEY,{expiresIn:'300s'})};
            // console.log(jwt.verify(payload.token,API_SECRET_KEY))
@@ -134,9 +135,9 @@ export default function SignUp(props){
     }
   
     useEffect(()=>{
-        if(props.profile!==''){
+        if(props.profile!=='' && props.profile!==null){
             router.push('/')
-        }
+          }
     },[])
 
 
@@ -171,7 +172,7 @@ export default function SignUp(props){
                     <div className="input-field-container">
                         <i className="icon"><RiLockPasswordFill/></i>
                         <input className={errorpassword!==''?"input-field input-error":"input-field"} type={showPassword?"text":"password"} placeholder="Password" name="psw"
-                        value={password} onChange={(e)=>{setPassword(e.target.value);setErrorPassword('')}} onBlur={checkPass} disabled={disabled}/>
+                        value={password} onChange={(e)=>{setPassword(e.target.value);setErrorPassword('')}} onBlur={()=>{checkPass();checkConfirmPass();}} disabled={disabled} />
                         <i className="passwordshow" onClick={()=>setShowPassword(!showPassword)}>{showPassword?<AiOutlineEyeInvisible/>:<AiOutlineEye/>}</i>
                     </div>
                     <p className="texterror"  style={errorpassword===''?{display:'none'}:{}}>{errorpassword}</p>
@@ -183,7 +184,7 @@ export default function SignUp(props){
                     <div className="input-field-container">
                         <i className="icon"><RiLockPasswordFill/></i>
                         <input className={errorconfirmpassword!==''?"input-field input-error":"input-field"} type={showPassword?"text":"password"} placeholder="Confirm Password" name="cpsw"
-                        value={confirmpassword} onChange={(e)=>{setConfirmPassword(e.target.value);setErrorConfirmPassword('')}} onBlur={checkConfirmPass} disabled={disabled}/>
+                        value={confirmpassword} onChange={(e)=>{setConfirmPassword(e.target.value);setErrorConfirmPassword('');checkPass();}} onBlur={checkConfirmPass} disabled={disabled} />
                         <i className="passwordshow" onClick={()=>setShowPassword(!showPassword)}>{showPassword?<AiOutlineEyeInvisible/>:<AiOutlineEye/>}</i>
                     </div>
                     <p className="texterror"  style={errorconfirmpassword===''?{display:'none'}:{}}>{errorconfirmpassword}</p>

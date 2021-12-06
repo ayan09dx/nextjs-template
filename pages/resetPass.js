@@ -93,9 +93,9 @@ export default function SignUp(props){
     }
   
     useEffect(()=>{
-        if(props.profile!==''){
+        if(props.profile!=='' && props.profile!==null){
             router.push('/')
-        }
+          }
         if(router.query.token){
             let userdata=verifyAPIToken(router.query.token);
             if(userdata){
