@@ -1,7 +1,7 @@
 import React, {useState,useEffect } from 'react';
 import Header from './Header'
 import Footer from './Footer'
-
+import BottomNav from './BottomNav';
 
 export default function Layout({children}){
 const [load,setLoad]=useState(false);
@@ -21,7 +21,8 @@ useEffect(()=>{
         <div>
             <Header/>
             <div className="main" style={{marginTop:85}}>{children}</div>
-            <Footer/>     
+            <Footer/>    
+            <BottomNav/> 
         </div>
         :<div className="main">{children}</div>
     );

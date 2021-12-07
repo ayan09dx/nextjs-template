@@ -118,6 +118,13 @@ a {
   background-color: grey;
   cursor:not-allowed;
 }
+.textsuccess{
+  font-size: 12px;
+  color: green;
+  font-weight: bold;
+  margin: 0px;
+  margin-top: 5px;
+}
 .texterror{
   font-size: 12px;
   color: red;
@@ -189,6 +196,11 @@ color: #004ABD;
   top: 0;
   transform: translateY(-50%) scale(.9);
 }
+.input-outlined input:not(placeholder-shown) + label {
+  color: #004ABD;
+  top: 0;
+  transform: translateY(-50%) scale(.9);
+}
 
 
 .input-outlined  input[type='file']{
@@ -216,6 +228,9 @@ color: #004ABD;
 .imagepreview{
   margin-top: 15px;
   position: relative;
+  border: 1px solid lightblue;
+  text-align: center;
+  width: 300px;
 }
 .imagepreviewaction{
   z-index: 1;
@@ -248,6 +263,16 @@ color: #004ABD;
   transition: 1s;
 }
 
+/* Bottom Nav*/
+
+.bottomnavcontainer{
+  display: none;
+ 
+}
+
+
+/* Bottom Nav*/
+
 
 /* Top Header & footer Styles */
 .header{
@@ -262,6 +287,9 @@ color: #004ABD;
 }
 footer{
   background: #151515;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 li {
   list-style: none;
@@ -377,7 +405,45 @@ li {
     min-width: 20px;
  
   }
+  footer{display: none;}
 
+/* Bottom Nav */
+
+.bottomnavcontainer{
+ display: flex;
+ background:white;
+ height: 70px;
+ width: 100%;
+ position: absolute;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ bottom:0;
+}
+.bttmnavbttn{
+  display: flex;
+  flex-direction: column;
+  background: white;
+  width: 25%;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  cursor: pointer;
+}
+.bttmnavbttn.selected{
+  border-bottom:4px solid #004ABD ;
+  color: #004ABD;
+  font-weight: bold;
+  transition: .4s;
+}
+.bttmnavicon{
+  font-size: 1.8rem;
+}
+.bttmnavbttnlabel{
+  line-height: 0;
+  padding: 0px;
+  margin: 8px;
+  font-size: 0.9rem;
+}
+/* Bottom Nav */
   /* Header & Footer */
   .navbar{
     padding:10px;
